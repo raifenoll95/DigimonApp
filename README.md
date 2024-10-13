@@ -1,6 +1,7 @@
 # DigimonApp
 
-This application was developed by **Rai Fenoll**. You can access the live version of the app at: [https://digiapp-info.netlify.app/](https://digiapp-info.netlify.app/).
+This application was developed by **Rai Fenoll**. You can access the live version of the app at: 
+[https://digiapp-info.netlify.app/](https://digiapp-info.netlify.app/).
 
 ## Overview
 
