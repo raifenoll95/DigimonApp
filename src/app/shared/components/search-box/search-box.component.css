@@ -1,0 +1,45 @@
+/* Search Box Styles */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #0056b3;
+}
+
+/* Alphabet Search Styles */
+.alphabet-container {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.alphabet-letter {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.alphabet-letter:hover {
+  color: #0056b3;
+}

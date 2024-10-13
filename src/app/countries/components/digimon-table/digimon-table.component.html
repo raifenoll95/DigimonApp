@@ -1,0 +1,80 @@
+<div *ngIf="digimons.length === 0; else table" class="alert alert-warning text-center no-digimon-alert">
+  <h2 class="alert-title">No Digimon Available</h2>
+  <p class="alert-message">It looks like there are no Digimon to show right now. Please check back later!</p>
+  <div class="image-container">
+    <img
+      src="https://i.ibb.co/JsPMd1N/nodigimon.png"
+      alt="No Digimon"
+      class="no-digimon-image"
+    />
+  </div>
+</div>
+
+
+
+<ng-template #table>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+          <tr>
+              <th>#</th>
+              <th></th>
+              <th>Name</th>
+              <th>Level</th>
+              <th>Debut</th>
+              <th>Skills</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let digimon of digimons; let i = index">
+              <strong><td>{{ digimon.id }}</td></strong>
+              <td>
+                  <img
+                      [src]="digimon.images[0].href"
+                      alt="{{ digimon.name }}"
+                      class="img-thumbnail"
+                      style="width: 80px; height: auto;"
+                      (click)="openModal(digimon.images[0].href)"
+                  />
+              </td>
+              <td><strong>{{ digimon.name }}</strong></td>
+              <td>{{ getLevels(digimon) }}</td>
+              <td>{{ digimon.releaseDate }}</td>
+              <td>
+                {{digimon.skills.length}}
+                  <!-- <ng-container>
+                      <span *ngFor="let skill of getSkills(digimon); let last = last">
+                          <i class="bi bi-lightning-fill"></i> <small>{{ skill }}</small><span *ngIf="!last">, </span>
+                      </span>
+                  </ng-container> -->
+              </td>
+              <td>
+                <a [routerLink]="['/digimon/by', digimon.id]" class="btn btn-primary">Info</a>
+              </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Código HTML de la tabla -->
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="imageModalLabel">Image</h5> <!-- Usar w-100 para que el título ocupe todo el ancho -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex justify-content-center align-items-center">
+        <img [src]="modalImageSrc" alt="Imagen del Digimon" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</ng-template>
+
+

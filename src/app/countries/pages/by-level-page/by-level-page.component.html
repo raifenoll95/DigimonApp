@@ -1,0 +1,31 @@
+<div class="title-wrapper">
+  <h2 class="title">
+    <i class="fas fa-search title-icon"></i> <!-- Icono de búsqueda -->
+    Search Digimons by Level
+  </h2>
+</div>
+
+<hr class="title-divider">
+
+<div class="row">
+  <div class="col text-center">
+    <div class="button-container"> <!-- Contenedor para los botones -->
+      <button *ngFor="let level of levels"
+        [ngClass]="getButtonClass(level)"
+        class="btn level-button mx-2"
+        (click)="searchByLevel(level)">
+        <i class="fas fa-star"></i> <!-- Icono de ejemplo -->
+        {{level}}
+      </button>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+    <countries-digimon-table [digimons]="digimons"></countries-digimon-table>
+  </div>
+</div>

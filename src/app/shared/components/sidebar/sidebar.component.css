@@ -1,0 +1,107 @@
+/* Aseguramos que el sidebar sea fijo, ocupe todo el largo y sea atractivo */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Ancho fijo en pantallas grandes */
+  height: 100vh;
+  background-color: #e9edf0;
+  padding: 20px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 1000; /* Aseguramos que el sidebar se mantenga encima del contenido */
+}
+
+/* Sidebar responsive en pantallas pequeñas */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* El sidebar ocupa todo el ancho en pantallas pequeñas */
+    height: auto; /* Altura automática en lugar de 100vh */
+    position: relative; /* Deja de ser fijo en pantallas pequeñas */
+    border-radius: 0; /* Quitar bordes redondeados */
+  }
+}
+
+.sidebar-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Estilo de la imagen del logo */
+.sidebar-logo {
+  display: block;
+  margin: 0 auto 15px; /* Centra la imagen y añade margen inferior */
+  width: 100%;         /* Ocupa el 100% del ancho del sidebar */
+  height: auto;        /* Mantiene la proporción de la imagen */
+}
+
+.accordion-button {
+  background-color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-body {
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.list-group-item {
+  border: none;
+  padding: 10px 15px;
+}
+
+.list-group-item a {
+  color: #007bff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.list-group-item a:hover {
+  text-decoration: underline;
+}
+
+.list-group-item.active a {
+  color: #fff;
+}
+
+.bi-chevron-down, .bi-chevron-up {
+  transition: transform 0.3s ease;
+}
+
+/* Estilo para la transición del acordeón */
+.accordion-collapse {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
+.collapse {
+  max-height: 0;
+}
+
+.accordion-collapse:not(.collapse) {
+  max-height: 200px; /* Ajusta según el contenido */
+}
+
+/* TODO: SIDEBAR */
+
+.sidebar-title {
+  cursor: pointer; /* Cambia el cursor a un puntero */
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Hereda el color del texto */
+  font-weight: bold; /* Hacer el texto más grueso */
+  display: block; /* Permite que el span se comporte como un bloque */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.sidebar-title:hover {
+  color: #007bff; /* Cambia el color al pasar el mouse (opcional) */
+}

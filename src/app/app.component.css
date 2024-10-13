@@ -1,0 +1,58 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  height: 100vh; /* Ocupar el 100% de la altura de la ventana */
+}
+
+
+.router-outlet {
+  padding: 20px;
+  background-color: #ffffff; /* Fondo blanco para el contenido principal */
+  min-height: 100vh; /* Asegura que el contenido siempre ocupe toda la altura */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para destacar el contenido */
+}
+
+
+/* Fijar el sidebar */
+.shared-container {
+  position: fixed; /* Fija el sidebar */
+  top: 0;
+  left: 0;
+  width: 25%; /* Ajusta el ancho de la columna según la distribución deseada */
+  height: 100vh; /* Asegura que el sidebar ocupe el 100% de la altura de la pantalla */
+  background-color: #f8f9fa; /* Color de fondo del sidebar */
+  padding: 20px;
+  overflow-y: auto; /* Permitir desplazamiento si el contenido del sidebar es muy largo */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra para hacer el sidebar más visible */
+}
+
+/* Ajuste para el contenido */
+.shared-container {
+  margin-left: 25%; /* Empuja el contenido hacia la derecha para que no se superponga al sidebar */
+  padding: 20px;
+  min-height: 100vh; /* Para asegurar que el contenido siempre ocupe la altura total de la pantalla */
+  overflow-y: auto; /* Permitir desplazamiento vertical en el contenido */
+}
+
+/* El problema es que el sidebar está ocupando 250px de ancho, pero el contenedor del contenido principal (<router-outlet>)
+está usando las clases de Bootstrap (col-md-9), que se basa en un sistema de 12 columnas y está calculando su posición sin
+tener en cuenta el ancho fijo del sidebar. */
+
+/* Ajustar margen del contenido principal en pantallas grandes */
+@media (min-width: 768px) {
+  .col-md-9 {
+    margin-left: 350px; /* Deja espacio para el sidebar fijo de 250px */
+  }
+}
+
+/* Para pantallas pequeñas el sidebar ya no es fijo, así que el margen vuelve a ser 0 */
+@media (max-width: 768px) {
+  .col-md-9 {
+    margin-left: 0; /* No hay necesidad de margen en pantallas pequeñas */
+  }
+}
+

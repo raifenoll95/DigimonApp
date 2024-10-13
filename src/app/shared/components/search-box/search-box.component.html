@@ -1,0 +1,23 @@
+<!-- Search Box -->
+<div class="search-container">
+  <input
+    type="text"
+    [placeholder]="placeholder"
+    (keyup.enter)="emitValue()"
+    (keyup)="onKeyPress(txtInput.value)"
+    [value]="initialValue"
+    class="form-control search-input"
+    #txtInput
+  />
+</div>
+
+<!-- Alphabetical Search -->
+<div class="alphabet-container">
+  <span
+    *ngFor="let letter of alphabet"
+    class="alphabet-letter"
+    (click)="onLetterClick(letter)"
+  >
+    {{ letter }}
+  </span>
+</div>

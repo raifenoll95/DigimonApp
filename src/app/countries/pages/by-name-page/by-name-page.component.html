@@ -1,0 +1,29 @@
+<div class="title-wrapper">
+  <h2 class="title">
+    <i class="fas fa-search title-icon"></i> <!-- Icono de búsqueda -->
+    Search Digimons by Name
+  </h2>
+</div>
+
+<hr class="title-divider">
+<hr>
+
+<div class="row">
+  <div class="col">
+     <shared-search-box
+      [initialValue]="initialValue"
+      (onDBounce)="searchByName($event)"
+      (onLetterSelected)="searchByletter($event)"
+      placeholder="Search by name">
+    </shared-search-box>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+    <countries-digimon-table [digimons]="digimons"></countries-digimon-table>
+  </div>
+</div>

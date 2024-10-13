@@ -1,0 +1,311 @@
+/* Asegúrate de importar la fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.title-wrapper {
+  background: linear-gradient(to right, #007bff, #00aaff); /* Fondo degradado */
+  padding: 20px 30px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+  margin: 20px auto; /* Margen para centrar el contenedor */
+  max-width: 800px; /* Ancho máximo para mantener el diseño limpio */
+  text-align: center; /* Centrar texto */
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif; /* Fuente elegante */
+  font-size: 2.8rem; /* Tamaño de fuente grande */
+  font-weight: 600; /* Peso de fuente semi-negrita */
+  color: #ffffff; /* Color del texto blanco para el contraste */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  margin: 0; /* Sin margen */
+  position: relative; /* Para los efectos de subrayado */
+  padding-bottom: 10px; /* Espaciado inferior para el subrayado */
+}
+
+.title-icon {
+  font-size: 1.5rem; /* Tamaño del icono */
+  margin-right: 10px; /* Espaciado entre el icono y el texto */
+}
+
+.title-divider {
+  border: none; /* Eliminar el borde por defecto */
+  height: 3px; /* Altura de la línea horizontal */
+  background-color: #0056b3; /* Color de la línea horizontal */
+  margin: 0; /* Sin margen */
+  width: 80%; /* Ancho de la línea horizontal */
+  margin-left: auto; /* Centrar horizontalmente */
+  margin-right: auto; /* Centrar horizontalmente */
+}
+
+.button-container {
+  display: flex; /* Habilita Flexbox */
+  flex-wrap: nowrap; /* Evita que los botones salten a la siguiente línea */
+  justify-content: space-between; /* Distribuye los botones de manera uniforme */
+  padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+.level-button {
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  padding: 10px 15px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+  flex: 1 1 auto; /* Permite que los botones se mantengan en una sola fila */
+  margin: 5px; /* Espaciado entre botones */
+  min-width: 100px; /* Ancho mínimo para los botones */
+  max-width: 150px; /* Ancho máximo para los botones */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+}
+
+.level-button:hover {
+  transform: scale(1.05); /* Aumento de tamaño al pasar el ratón */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
+}
+
+.level-button i {
+  margin-right: 5px; /* Espaciado entre icono y texto */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .level-button {
+    min-width: 80px; /* Ajusta el ancho mínimo para pantallas pequeñas */
+    max-width: 100px; /* Ajusta el ancho máximo para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .level-button {
+    min-width: 70px; /* Ajusta el ancho mínimo para pantallas más pequeñas */
+    max-width: 80px; /* Ajusta el ancho máximo para pantallas más pequeñas */
+    font-size: 1rem; /* Disminuir tamaño de fuente en pantallas más pequeñas */
+  }
+}
+
+/* Importa fuentes llamativas para un diseño moderno */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap');
+
+/* Estilo base del body */
+body {
+  background: radial-gradient(circle at 50% 50%, #007bff, #00aaff);
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+/* Título responsivo con Flexbox */
+.title-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  margin: 50px auto;
+  max-width: 900px;
+  width: 90%; /* Ajustar a 90% del ancho disponible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Permitir el ajuste en varias líneas */
+  transition: transform 0.4s ease;
+}
+
+.title-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo del título */
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #007bff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: normal; /* Permitir que el texto se divida si es necesario */
+  text-align: center;
+  width: 100%;
+}
+
+.title-icon {
+  font-size: 2.5rem;
+  margin-right: 12px;
+  color: #00aaff;
+  transition: transform 0.4s ease;
+}
+
+.title-wrapper:hover .title-icon {
+  transform: rotate(360deg);
+}
+
+/* Línea divisoria del título */
+.title-divider {
+  border: none;
+  height: 4px;
+  background: linear-gradient(to right, #007bff, #00aaff);
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+/* Caja de búsqueda */
+.search-box {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 2px solid #007bff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-box:focus {
+  border-color: #00aaff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+/* Spinner de carga */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.spinner::before {
+  content: "";
+  width: 45px;
+  height: 45px;
+  border: 4px solid rgba(0, 123, 255, 0.6);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spinner-rotate 1s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tabla de Digimons */
+.digimon-table {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.digimon-table th, .digimon-table td {
+  padding: 15px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.digimon-table th {
+  background-color: #007bff;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.digimon-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.digimon-table tr:hover {
+  background-color: #00aaff;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* Botones */
+.level-button {
+  font-size: 1.1rem;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #007bff, #00aaff);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.level-button:hover {
+  background: linear-gradient(145deg, #0056b3, #007bff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.level-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.level-button i {
+  margin-right: 8px;
+  transition: transform 0.3s;
+}
+
+.level-button:hover i {
+  transform: rotate(15deg);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.6rem; /* Ajuste para pantallas pequeñas */
+  }
+
+  .title-icon {
+    font-size: 2rem; /* Ajustar el tamaño del icono */
+  }
+
+  .search-box {
+    max-width: 450px;
+    padding: 10px;
+  }
+
+  .digimon-table {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .title-icon {
+    font-size: 1.6rem;
+  }
+
+  .search-box {
+    max-width: 350px;
+    font-size: 1rem;
+  }
+
+  .digimon-table {
+    max-width: 100%;
+  }
+
+  .level-button {
+    padding: 10px 12px;
+    font-size: 1rem;
+  }
+}
+

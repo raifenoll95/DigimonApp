@@ -1,0 +1,186 @@
+<div class="container mt-4">
+  <div class="row">
+    <ng-container *ngIf="digimons.length > 0; else noResults">
+      <div *ngFor="let digimon of digimons" class="col-md-12 mb-4">
+        <div class="card shadow-sm border-primary" style="background-color: white; color: black;">
+          <div class="bg-light border-bottom shadow-sm p-3 d-flex align-items-center" style="border-radius: 0.25rem;">
+            <!-- Cuadro pequeño para el ID a la izquierda -->
+            <div class="bg-dark text-light text-center" style="border-radius: 0.25rem; padding: 5px; font-size: 1rem; width: 50px; margin-right: 15px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+              {{ digimon.id }}
+            </div>
+            <!-- Espacio para centrar el nombre y el logo -->
+            <div class="flex-grow-1 text-center">
+              <h1 class="mb-0 d-flex align-items-center justify-content-center" style="font-family: 'Oswald', sans-serif; font-size: 2rem;">
+                {{ digimon.name }}
+              </h1>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <img
+              [src]="digimon.images[0]?.href"
+              class="card-img-top zoom-effect"
+              alt="{{ digimon.name }}"
+              style="max-width: 300px; height: auto; margin-bottom: 10px;"
+            />
+          </div>
+
+          <!-- Campos centrados en la card -->
+          <div class="mb-3 text-center">
+            <div class="d-flex justify-content-center">
+              <div *ngFor="let field of digimon.fields" class="mx-2">
+                <img [src]="field.image" alt="{{ field.field }}" style="max-width: 50px; height: auto;" />
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+
+            <section>
+              <div class="container">
+                <div class="mb-3">
+                  <ul class="list-unstyled" style="font-family: 'Georgia', serif; font-size: 1rem; color: #555; line-height: 1.6;">
+                    <li *ngFor="let desc of digimon.descriptions" class="mb-3" style="border-left: 5px solid #007bff; padding-left: 15px;">
+                      <strong class="text-primary">{{ desc.language }}: </strong> <span style="font-style: italic;">{{ desc.description }}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <hr class="my-4" />
+
+            <!-- Nueva fila para nivel, tipo, fecha de lanzamiento y atributos -->
+             <section class="py-8">
+              <div class="container">
+                <div class="row mb-3">
+                  <div class="col-md-4">
+                    <p class="card-text"><strong>Level</strong></p>
+                    <div class="bg-danger text-dark text-center" style="border-radius: 0.25rem; padding: 10px; font-size: 1.25rem; color: #343a40;">
+                      {{ digimon.levels[0]?.level }}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="card-text"><strong>Type</strong></p>
+                    <div class="bg-warning text-dark text-center" style="border-radius: 0.25rem; padding: 10px; font-size: 1.25rem; color: #fdfdfd;">
+                      {{ digimon.types[0]?.type }}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="card-text"><strong>Debut</strong></p>
+                    <div class="bg-dark text-light text-center" style="border-radius: 0.25rem; padding: 10px; font-size: 1.25rem; color: white;">
+                      {{ digimon.releaseDate }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+             </section>
+
+            <hr class="my-4" />
+
+            <!-- Tabla para las habilidades -->
+            <section class="py-8">
+              <div class="container">
+                <div class="table-responsive px-0">
+                  <table class="table table-striped bg-white rounded shadow small">
+                    <thead>
+                      <tr>
+                        <th class="py-6 ps-6">
+                          <a class="btn p-0 d-flex align-items-center text-dark fw-bold small" href="#">
+                            <span class="me-1 text-dark">Skill</span> <!-- Título en negro oscuro -->
+                            <svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </a>
+                        </th>
+                        <th class="py-6 ps-6">
+                          <a class="btn p-0 d-flex align-items-center text-dark fw-bold small" href="#">
+                            <span class="me-1 text-dark">Description</span> <!-- Título en negro oscuro -->
+                            <svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let skill of digimon.skills">
+                        <td>{{ skill.skill }}</td>
+                        <td>{{ skill.description }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+
+            <!-- Separador entre Descripciones y Evoluciones Previas -->
+            <hr class="my-4" />
+
+            <section class="py-8">
+              <div class="container">
+                <div class="mb-3">
+                  <strong><h3>Prior Evolutions</h3></strong>
+                </div>
+
+                <!-- Cajita verde con esquinas redondeadas -->
+                <div class="bg-light text-light rounded p-3 mb-4" style="border-radius: 0.5rem;">
+                  <div class="row">
+                    <div *ngFor="let prior of digimon.priorEvolutions" class="col-sm-4 col-md-2 mb-3">
+                      <div class="card text-center shadow-sm" style="background-color: white; border-radius: 0.5rem;">
+                        <div class="card-body p-2">
+                          <!-- Nombre del Digimon -->
+                          <h6 class="card-title" style="font-size: 0.9rem; font-weight: bold;">
+                            {{ prior.digimon }}
+                          </h6>
+                          <!-- Imagen del Digimon -->
+                          <img [src]="prior.image" alt="{{ prior.digimon }}" style="max-width: 60px; height: auto;" class="mx-auto d-block mt-2" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Separador entre Evoluciones Previas y Próximas Evoluciones -->
+            <hr class="my-4" />
+
+            <section>
+              <div class="container">
+                <div class="mb-3">
+                  <strong><h3>Next Evolutions</h3></strong>
+                </div>
+                <!-- Cajita verde con esquinas redondeadas -->
+                <div class="bg-light text-light rounded p-3 mb-4" style="border-radius: 0.5rem;">
+                  <div class="row">
+                    <div *ngFor="let next of digimon.nextEvolutions" class="col-sm-4 col-md-2 mb-3">
+                      <div class="card text-center shadow-sm" style="background-color: white; border-radius: 0.5rem;">
+                        <div class="card-body p-2">
+                          <!-- Nombre del Digimon -->
+                          <h6 class="card-title" style="font-size: 0.9rem; font-weight: bold;">
+                            {{ next.digimon }}
+                          </h6>
+                          <!-- Imagen del Digimon -->
+                          <img [src]="next.image" alt="{{ next.digimon }}" style="max-width: 60px; height: auto;" class="mx-auto d-block mt-2" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <a [routerLink]="['/digimon/by', digimon.id]" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #noResults>
+      <div class="col-12 text-center">
+        <h3>No se encontraron Digimon</h3>
+        <p>Intenta buscar otro ID.</p>
+      </div>
+    </ng-template>
+  </div>
+</div>

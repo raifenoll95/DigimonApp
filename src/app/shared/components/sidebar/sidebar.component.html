@@ -1,0 +1,33 @@
+<div class="sidebar">
+  <span routerLink="/home" class="sidebar-title">DigimonApp</span>
+
+   <!-- Imagen debajo del título -->
+   <img class="sidebar-logo" src="https://i.ibb.co/PWRKypp/d9a8wxs-65fa4e72-8b7f-46de-a4d3-f77f954e128d.png" alt="Digimon Logo">
+
+  <hr>
+
+  <!-- Acordeón para Buscar Digimon -->
+  <div class="accordion" id="digimonAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button d-flex justify-content-between align-items-center bg-light"
+                (click)="toggleAccordion()">
+          <strong><small>Digimons</small></strong>
+          <i [ngClass]="{'bi-chevron-down': isCollapsed, 'bi-chevron-up': !isCollapsed}" class="ms-2"></i>
+        </button>
+      </h2>
+      <div [ngClass]="{'accordion-collapse': true, 'collapse': isCollapsed}">
+        <div class="accordion-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a routerLink="digimon/by-name" routerLinkActive="active">Search by Name</a>
+            </li>
+            <li class="list-group-item">
+              <a routerLink="digimon/by-level" routerLinkActive="active">Search by Level</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
