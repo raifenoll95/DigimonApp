@@ -1,27 +1,37 @@
 # DigimonApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
+This application was developed by **Rai Fenoll**. You can access the live version of the app at: [https://digiapp-info.netlify.app/](https://digiapp-info.netlify.app/).
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**DigimonApp** is a comprehensive platform where users can search for and explore detailed information about Digimon. From their individual characteristics to their evolutions, the app offers an easy and intuitive way to dive into the world of Digimon.
 
-## Code scaffolding
+## Preview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![DigimonApp Preview](https://i.ibb.co/HrY30V8/Captura.png)
+
+---
+
+## Development Server
+
+To run the development server, use the command: `ng serve`. Then, navigate to `http://localhost:4200/`. The app will automatically reload if you make changes to any of the source files.
+
+## Code Generation
+
+To generate new components, you can run: `ng generate component component-name`. The Angular CLI also supports generating directives, pipes, services, classes, guards, interfaces, enums, and modules.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to compile the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Unit Testing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests using [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## End-to-End Testing
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng e2e` to execute end-to-end tests with the platform of your choice. Note that you may need to install an additional package to implement end-to-end testing.
 
-## Further help
+## Further Assistance
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For more information on Angular CLI commands, run `ng help` or refer to the official [Angular CLI Documentation](https://angular.io/cli).
